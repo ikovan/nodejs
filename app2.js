@@ -21,11 +21,11 @@ io.sockets.on('connection', function (client) {
     console.log('Client connected');
     var mysql      = require('mysql');
 	var connection = mysql.createConnection({
-	  host     : 'localhost',
-	  port	   : '3999',
-	  user     : 'pentaho',
-	  password : 'pentaho',
-	  database : 'pentaho_oltp'
+	  host     : '$OPENSHIFT_MYSQL_DB_HOST',
+	  port	   : '$OPENSHIFT_MYSQL_DB_PORT',
+	  user     : 'adminzaWZK85',
+	  password : 'PnEi1MUwss2e',
+	  database : 'nodejs2'
 	});
 
     connection.query('SELECT * FROM orderdetails LIMIT 10', function(err, rows, fields) {
